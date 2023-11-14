@@ -3,12 +3,12 @@ const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const Auth = require('../models/auth-model')
 const { emit } = require('nodemon')
-const { where, DATE, Op } = require('sequelize')
+const { where, DATE} = require('sequelize')
 const { use } = require('../routes/router')
 const { sendEmail } = require('../utils/email')
 const { errorMonitor } = require('nodemailer/lib/xoauth2')
 const otpGenerator = require('otp-generator')
-const moment = require('moment')
+
 // Register user
 exports.signup = async (req, res) => {
   try {
